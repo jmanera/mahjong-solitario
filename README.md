@@ -4,7 +4,13 @@ Juego de mahjong solitario (emparejar fichas) para tablet Android. Es una págin
 (`app/assets/`) envuelta en una app Android mínima con un WebView a pantalla completa.
 Funciona sin conexión.
 
-## Instalar en la tablet
+## Descargar
+
+La última versión firmada está en [Releases](https://github.com/jmanera/mahjong-solitario/releases/latest): descarga `Mahjong.apk` y ábrelo
+en la tablet (la primera vez hay que permitir instalar aplicaciones de origen desconocido), o
+instálalo con `adb install -r Mahjong.apk`.
+
+## Compilar e instalar desde el código
 
 Con la tablet conectada por USB y la depuración USB activada:
 
@@ -53,3 +59,22 @@ python3 -m http.server 8765 -d app/assets
 ```
 
 Y abrir `http://localhost:8765`. Atajos de teclado: Z deshacer, Y rehacer, H pista, P pausa.
+
+## Publicar una versión
+
+El workflow [Publicar APK](.github/workflows/release.yml) compila el APK firmado y crea una release
+nueva (`v1.N`). Solo se lanza a mano, desde *Actions > Publicar APK > Run workflow*, y solo lo puede
+ejecutar el dueño del repositorio. Firma con la misma clave que `release.keystore`, guardada en el
+secreto `KEYSTORE_BASE64` (el fichero en base64):
+
+```bash
+base64 -w0 release.keystore | gh secret set KEYSTORE_BASE64
+```
+
+## Otros juegos
+
+Hechos de la misma forma, para la misma tablet:
+
+- [Autodefinidos](https://github.com/jmanera/autodefinidos): crucigramas con las definiciones dentro de la cuadrícula.
+- [Sopa de letras](https://github.com/jmanera/sopa-de-letras): sopas de letras por temas.
+- [Abecedario](https://github.com/jmanera/abecedario): una definición por letra contra el reloj, para uno o varios jugadores.
