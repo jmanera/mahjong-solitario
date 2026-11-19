@@ -79,3 +79,4 @@ Hechos de la misma forma, para la misma tablet:
 - [Sopa de letras](https://github.com/jmanera/sopa-de-letras): sopas de letras por temas.
 - [Abecedario](https://github.com/jmanera/abecedario): una definición por letra contra el reloj, para uno o varios jugadores.
 - [Zampabolas](https://github.com/jmanera/zampabolas): juego de laberinto con varios mundos (clásico, Navidad, bosque, carreras) y personajes.
+- [Encaja](https://github.com/jmanera/encaja): piezas que caen y encajan, con seis modos y cuatro temas.
